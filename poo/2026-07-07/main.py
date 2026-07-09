@@ -17,11 +17,16 @@ def cadastrar_cliente():
             cliente_existente = True
             break
     
-    
     if cliente_existente:
         print(f"O Cliente {nome} ja esta cadastrado")
     else:
         cpf = input("CPF: ")
+        for nome_cliente in clientes: 
+        #for nome_cliente in meu_salao.clientes:
+            if nome_cliente.cpf == cpf:
+                print("CPF já Cadastrado!")
+                return
+        
         telefone = input("Telefone: ")
         email = input("E-mail: ")
 
@@ -168,7 +173,33 @@ def cancelar_agendamento():
     else:
         print("Índice inválido.\n")
 
-
+def editar_cliente():
+    print("\n=== Editar clientes ===")
+    
+    if not clientes:
+        print("Nenhum cliente cadastrado.\n")
+        return
+    
+    listar_clientes()
+    indice_cliente = int(input("Escolha o cliente: "))
+    if indice_cliente < 1 or indice_cliente > len(clientes):
+    #if indice_cliente < 1 or indice_cliente > len(meu_salao.clientes):
+        print("Cliente inválido!\n")
+        return
+    
+    cliente = clientes[indice_cliente-1]
+    #cliente = meu_salao.clientes[indice_cliente-1]
+    print("Forneca agora os novos dados para Edição do cliente")
+    cliente.nome = input("Digite o novo Nome: ")
+    #meu_salao.cliente.nome = input("Digite o novo Nome: ")
+    cliente.telefone = input("Digite o novo telefone: ")
+    #meu_salao.cliente.telefone = input("Digite o novo telefone: ")
+    cliente.email = input("Digite o novo email: ")
+    #meu_salao.cliente.email = input("Digite o novo email: ")
+    print(f"Cliene {cliente.nome} atualizado com sucesso \n")
+    
+    #editar possiveis agendamentos anteriores
+    
 #meu_salao = SalaoBeleza("Salão Beauty Manager")
 #print(f"Bem vindo ao salao {meu_salao.nome_salao}")
 
@@ -180,6 +211,7 @@ while True:
                 3 - Agendar Atendimento
                 4 - Listar Agendamentos
                 5 - Cancelar Agendamento
+                6 - Editar Cliente
                 0 - Sair
                 """)
 
@@ -200,6 +232,8 @@ while True:
     elif opcao == "5":
         cancelar_agendamento()
 
+    elif opcao == "6":
+        editar_cliente()
     elif opcao == "0":
         print("Sistema encerrado.\n")
         break
