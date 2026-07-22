@@ -13,12 +13,11 @@ class Retangulo:
     @staticmethod
     def calc_area(ladoA, ladoB):
         return ladoA * ladoB
-    
     def calc_perimetro(self):
         return self.ladoA * 2 + self.ladoB * 2
     
-
 ladoa = float(input("Digite o valor da Base"))
 ladob = float(input("Digite o valor da Altura"))
 retangulo = Retangulo(ladoa, ladob)
-print(f"Info do seu terreno: {retangulo}, area {Retangulo.calc_area(retangulo.ladoA, retangulo.ladoB)}, perimetro {retangulo.calc_perimetro()}")
+print(f"""Info do seu terreno: {retangulo}, 
+      area {Retangulo.calc_area(retangulo.ladoA, retangulo.ladoB)}, perimetro {retangulo.calc_perimetro()}""")

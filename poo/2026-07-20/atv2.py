@@ -25,13 +25,13 @@ class Pessoa:
         self.idade += 1
         print(f"{self.nome} tem agora {self.idade} ano(s)!")
 
-    def engordar(self, quilos):
-        self.peso += quilos
-        print(f"{self.nome} engordou {quilos} kg!")
+    def engordar(self):
+        self.peso += 3
+        print(f"{self.nome} engordou 3 kg!")
 
-    def emagrecer(self, quilos):
-        self.peso -= quilos
-        print(f"{self.nome} emagreceu {quilos} kg!")
+    def emagrecer(self):
+        self.peso -= 0.5
+        print(f"{self.nome} emagreceu 0.5 kg!")
 
     def crescer(self, centimetros):
         self.altura += centimetros
@@ -68,11 +68,11 @@ while True:
     if opcao == "1":
         p.envelhecer()
     elif opcao == "2":
-        qnt = float(input("Quantos quilos engordou? "))
-        p.engordar(qnt)
+      #  qnt = float(input("Quantos quilos engordou? "))
+        p.engordar()
     elif opcao == "3":
-        qnt = float(input("Quantos quilos emagreceu? "))
-        p.emagrecer(qnt)
+        #qnt = float(input("Quantos quilos emagreceu? "))
+        p.emagrecer()
     elif opcao == "4":
         cm = float(input("Quantos centimetros quer crescer? "))
         p.crescer(cm)
