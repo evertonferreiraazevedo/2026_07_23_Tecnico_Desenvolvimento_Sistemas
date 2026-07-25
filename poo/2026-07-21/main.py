@@ -32,7 +32,7 @@ if __name__ == "__main__":
             if not Veiculo.validar_placa(placa):
                 print("Erro: Placa inválida! Deve conter exatamente 7 caracteres.")
                 continue
-                
+
             ja_cadastrado = False
             for v in Veiculo.patio_estacionamento:
                 if v.placa == placa:
@@ -57,6 +57,7 @@ if __name__ == "__main__":
             if veiculo_encontrado:
                 horas_novas = float(input("Digite a quantidade de horas a adicionar: "))
                 veiculo_encontrado.adicionar_horas(horas_novas)
+                veiculo_encontrado.__horas_estacionadas = 0
             else:
                 print("Veículo não encontrado no pátio.")
 

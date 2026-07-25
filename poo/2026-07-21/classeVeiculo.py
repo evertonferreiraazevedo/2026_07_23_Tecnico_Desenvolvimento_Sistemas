@@ -7,9 +7,8 @@ class Veiculo:
         self.placa = placa
         self.modelo = modelo
         self.proprietario = proprietario
-        self.horas_estacionadas = horas_estacionadas
+        self.__horas_estacionadas = horas_estacionadas
 
-    
     def adicionar_horas(self, horas):
         if horas > 0:
             self.horas_estacionadas += horas

@@ -1,5 +1,5 @@
 # main.py
-from classes import Quarto, Hotel
+from classes_hotel import Quarto, Hotel
 
 def exibir_menu():
     print("\nSISTEMA DE HOTEL")
