@@ -38,3 +38,6 @@ class Taxi(Veiculos):
             
     def calcular_viagem(self):
         return self.bandeira + self.custo_basico * self.km_rodados
+    
+onibus = Onibus("pme-8060", "Mercedes", "sedã", 2030, 4.5,)
+print(onibus)
