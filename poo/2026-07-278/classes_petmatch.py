@@ -55,7 +55,6 @@ class Tutor(Pessoa):
             print(f"- {animal}")
             
 class Participante(Pessoa):
-    
     pass
 
 class Encontro:
